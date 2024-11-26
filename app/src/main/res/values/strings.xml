@@ -1,0 +1,30 @@
+<resources>
+    <string name="TTDEF">T&amp;T DEF</string>
+    <string name="open">Abrir menú</string>
+    <string name="close">Cerrar menú</string>
+
+    <string-array name="roles_array">
+        <item>Administrador</item>
+        <item>Usuario</item>
+        <item>Repartidor</item>
+    </string-array>
+
+    <string name="app_name">Pantallas</string>
+    <string name="Actualizar_Estado">Actualizar Estado</string>
+    <string name="Descripcion_Logo">Logo</string>
+
+    <string-array name="opciones_estado">
+        <item>Paquete en proceso</item>
+        <item>Enviado</item>
+        <item>Tránsito</item>
+        <item>Entregado</item>
+    </string-array>
+
+    <string-array name="tipo_envio_opciones">
+        <item>Envío Rápido</item>
+        <item>Envío Estándar</item>
+        <item>Envío Económico</item>
+    </string-array>
+
+    <string name="mensaje_seleccion">Seleccionaste: </string>
+</resources>
