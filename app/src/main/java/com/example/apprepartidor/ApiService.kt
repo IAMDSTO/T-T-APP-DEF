@@ -1,16 +1,22 @@
-package com.tuapp.api
-
-import com.tuapp.model.UserResponse
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
+import retrofit2.http.Body
 import retrofit2.http.POST
 
+// Solicitud y respuesta
+data class LoginRequest(val email: String, val password: String)
+data class LoginResponse(
+    val success: Boolean,
+    val message: String,
+    val data: UserData?
+)
+data class UserData(
+    val id: Int,
+    val nombreUsuario: String,
+    val email: String,
+    val rolID: Int
+)
+
 interface ApiService {
-    @FormUrlEncoded
-    @POST("api/login.php") // Cambia según la ubicación en XAMPP
-    fun iniciarSesion(
-        @Field("email") email: String,
-        @Field("password") password: String
-    ): Call<UserResponse>
+    @POST("loginAndroid.php")
+    fun login(@Body request: LoginRequest): Call<LoginResponse>
 }
