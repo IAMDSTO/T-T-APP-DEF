@@ -9,21 +9,39 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewPedidos"
-        android:layout_width="385dp"
-        android:layout_height="493dp"
-        android:clipToPadding="false"
-        android:padding="8dp"
+    <!-- Spinner para el filtro de estado -->
+    <Spinner
+        android:id="@+id/spinnerEstado2"
+        android:layout_width="376dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="68dp"
+        android:background="@color/purple"
+        android:entries="@array/opciones_estado"
+        android:spinnerMode="dropdown"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.281"
-        tools:listitem="@layout/item_pedido" />
+        app:layout_constraintVertical_bias="0.592" />
 
+    <!-- LinearLayout para los elementos de la lista de pedidos -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinnerEstado2"
+        app:layout_constraintVertical_bias="0.129">
+
+        <!-- RecyclerView para mostrar los pedidos -->
+    </LinearLayout>
+
+    <!-- Botón para actualizar estado -->
     <Button
         android:id="@+id/boton_actualizar_std"
         android:layout_width="match_parent"
@@ -38,6 +56,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.784" />
 
+    <!-- Título de la pantalla -->
     <TextView
         android:id="@+id/register_link"
         android:layout_width="wrap_content"
@@ -52,6 +71,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.026" />
 
+    <!-- Botón para reportar extravío -->
     <Button
         android:id="@+id/_boton_pqt_extraviado"
         android:layout_width="match_parent"
@@ -66,6 +86,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.88" />
 
+    <!-- Botón para cerrar sesión -->
     <Button
         android:id="@+id/boton_cerrar_sesion"
         android:layout_width="match_parent"
@@ -79,5 +100,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.98" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPedidos"
+        android:layout_width="387dp"
+        android:layout_height="291dp"
+        android:clipToPadding="false"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.194"
+        tools:listitem="@layout/item_pedido" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

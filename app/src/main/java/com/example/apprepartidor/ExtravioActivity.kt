@@ -2,6 +2,7 @@ package com.example.apprepartidor
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.ttdef.R
 
 class ExtravioActivity : AppCompatActivity() {
 
