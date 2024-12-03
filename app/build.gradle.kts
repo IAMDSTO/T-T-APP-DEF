@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -35,7 +37,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    // Activar ViewBinding
+    viewBinding {
+        enabled = true
+    }
 }
+
 
 dependencies {
     // Dependencias de Android
@@ -44,21 +51,17 @@ dependencies {
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
-    // Conector MySQL
-    implementation("mysql:mysql-connector-java:8.0.30")
-
     // Retrofit para realizar peticiones HTTP
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
-
-    // Gson Converter para manejar respuestas JSON con Retrofit
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     // OkHttp para manejar las conexiones HTTP
-    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+    implementation("androidx.viewbinding:viewbinding:4.0.0")
 
-    // Dependencias de prueba (puedes eliminarlas si no las usas)
-    implementation("mysql:mysql-connector-java:8.0.30")
 
+    // Dependencias de prueba
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
