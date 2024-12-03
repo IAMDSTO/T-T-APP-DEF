@@ -1,7 +1,6 @@
 package com.example.apprepartidor.models
 
-data class Pedido(
+data class PedidoUpdateRequest(
     val id: Long,
-    val descripcion: String,
     val estado: String
 )

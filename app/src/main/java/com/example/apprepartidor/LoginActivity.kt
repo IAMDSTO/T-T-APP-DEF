@@ -55,8 +55,7 @@ class LoginActivity : AppCompatActivity() {
                         // Verificar si el usuario tiene el rol de "Repartidor" (rolID == 2)
                         if (loginResponse.data?.rolID?.toInt() == 2) {
                             // Guardar datos en la sesión
-                            Session.userId = loginResponse.data?.id
-                            Session.userName = loginResponse.data?.nombreUsuario
+                            Session.userId = userData?.id ?: 0L
 
                             // Redirigir a ListaDePedidos
                             val intent = Intent(this@LoginActivity, ListaDePedidos::class.java)

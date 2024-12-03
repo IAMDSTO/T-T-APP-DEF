@@ -13,7 +13,9 @@ interface ApiService {
     fun login(@Body request: LoginRequest): Call<LoginResponse>
 
     @POST("APIAndroid/mostrarPedidos.php")
+    fun obtenerPedidos(@Body userId: UserId): Call<List<Pedido>>
 
-    suspend fun obtenerPedidos(@Body body: Map<String, Any>): Response<List<Pedido>>
+    @POST("APIAndroid/actualizarPedido.php")
+    fun actualizarPedido(@Body request: PedidoUpdateRequest): Call<ApiResponse>
 }
 
