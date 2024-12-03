@@ -14,9 +14,7 @@
     <string name="Descripcion_Logo">Logo</string>
 
     <string-array name="opciones_estado">
-        <item>Paquete en proceso</item>
-        <item>Enviado</item>
-        <item>Tránsito</item>
+        <item>En Tránsito</item>
         <item>Entregado</item>
     </string-array>
 
